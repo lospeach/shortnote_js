@@ -1,7 +1,9 @@
-
+# Learning Es6
 
 ## [ Learning Es6: default parameter ]
+
 **js**
+
 ```
 function appDis(cost, discount) {
   discount = discount || .10;
@@ -230,3 +232,274 @@ greet({
 ```
 
 >  hello, Karen Again and you are 33
+
+
+
+## [ Learning Es6: Class ]
+**es5**
+```
+// 1. create a constructure
+function User(username, email){
+  //assign attribute to it
+  this.username = username;
+  this.email = email;
+}
+
+//2. create prototype obj: for any method u wanna share attached to prototype
+User.prototype.changeEmail = function(newEmail) {
+  //method that want to do (share method)
+  this.email = newEmail;
+};
+
+//3. assign it (old one)
+var user = new User('LospeachWay', 'info@mail.com')
+
+// 4. use it
+user.changeEmail('new_info@mail.com')
+
+//5.  see a result
+console.dir(user);
+```
+
+but
+
+**es6**
+```
+// 1. create class
+class User {
+
+// 3. declare username, email we will do it in constructure
+  constructure(username, email) {
+    this.username = username;
+    this.email = email;
+  }
+
+// 2. create method
+  changeEmail(newEmail) {
+    //assign what it will do
+    this.email = newEmail;
+  }
+}
+
+ //4.  assign it (old one)
+let user = new User('LospeachWay', 'info@mail.com');
+
+// 5. use it
+user.changeEmail('new_infoagain@mail.com');
+
+//6.  see a result
+console.dir(user);
+```
+
+or
+
+```
+// 1. create class
+class User {
+  get somthing() {
+    return 'sunday';
+  }
+}
+//2.  assign it (old one)
+let user = new User();
+
+//3.  see a result
+console.log(user.somthing); //sunday
+```
+
+
+
+
+## [ Learning Es6: Promise ]
+ Meaning: promise (I promise that perform the action or I will do blablabla for u I promise) holding a oporation (method, event) that it not taking place
+ the will per form an action.
+
+**js**
+
+This is a promise syntex...
+
+```
+promise.then(function(data) {
+  /*i will do blablabla for u when it's time.*/
+});
+promise.catch(function(err) {
+  // when st went wrong u promise, that u will sent a err msg.
+});
+```
+
+as
+
+```
+promise.then(function(data) {
+  /*i will do blablabla for u when it's time.*/
+}).catch(function(err) {
+  // when st went wrong u promise, that u will sent a err msg.
+});
+```
+
+same as
+
+```
+promise.then(function(data) {
+  /*i will do blablabla for u when it's time.*/
+}) , function(err) {
+  // when st went wrong u promise, that u will sent a err msg.
+});
+```
+
+a real used of promise
+
+```
+var timer = new Promise(function (resolve, reject) {
+
+  console.log('Init Promise');
+
+  setTimeout(function () {
+
+    console.log('Time Done!!!!');
+
+  }, 3000);
+
+});
+
+timer.then( function () {
+
+  console.log('Timer has concluded!!!');
+
+});
+```
+>Init Promise
+wait 3 sec then
+> Time Done!!!!
+
+u need to call both resolve and reject function
+we need to assign when do u want to resolve() or reject()
+
+```
+var timer = new Promise(function (resolve, reject) {
+
+  console.log('Init Promise');
+
+  setTimeout(function () {
+
+    console.log('Time Done!!!!');
+
+    resolve();
+
+  }, 3000);
+
+});
+
+
+timer.then( function () {
+
+  console.log('Timer has concluded!!!');
+
+});
+
+```
+
+>Init Promise
+wait 3 sec then
+> Time Done!!!!
+Timer has concluded!!!
+
+let's turn a timer to a function
+
+```
+var timer = function(length) {
+
+  return new Promise(function (resolve, reject) {
+
+    console.log('Init Promise');
+
+    setTimeout(function () {
+
+      console.log('Time Done!!!!');
+
+      resolve();
+
+    }, length);
+
+  });
+
+};
+
+timer(5000).then(() => alert('Yo, It is cool.'));
+```
+
+## [ Learning Es6: Useful String Additions ]
+
+instead of using this
+```
+let title = 'Red Silly';
+
+if (title.indexOf('R') == 0 ) {
+  console.log('There is R');
+}
+// !
+if (title.indexOf('B') == -1 ) {
+  console.log('There is no B');
+}
+```
+
+use this includes() instead
+```
+let title = 'Red Silly';
+
+if (title.includes('R')) {
+  console.log('There is R');
+}
+```
+
+> more:
+'string'.includes()
+'string'.startsWith(),
+'string'.endsWith(),
+find with position/index find i at index 5th(start at index 0)
+'string'.startsWith('i', 5),
+
+more, try
+```
+let str = 'hahahaha';
+console.log(str + 'lol'.repeat(11));
+```
+
+>hahahahalollollollollollollollollollollol
+
+and
+
+```
+let aTitle = 'The title is here.';
+console.log('='.repeat(5) + aTitle + '='.repeat(5));
+```
+
+>=====The title is here.=====
+
+or es6 way
+
+```
+let aTitle = 'The title is here.';
+console.log(`
+   ${'='.repeat(5)} ${aTitle} ${'='.repeat(5)}
+`);
+```
+
+>   ===== The title is here. =====
+
+
+
+
+## [ Learning Es6: Module ]
+**html**
+```
+
+```
+**css**
+```
+
+```
+**VUE**
+```
+
+```
