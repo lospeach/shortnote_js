@@ -488,6 +488,35 @@ console.log(`
 >   ===== The title is here. =====
 
 
+```
+class User {
+  constructor(name, isAdmin) {
+    this.name = name;
+    this.isAdmin = isAdmin;
+  }
+}
+
+let users = [
+  new User('Jeff', false),
+  new User('Jezz', true),
+  new User('Jith', false),
+];
+
+console.log(
+  users.find(user => user.isAdmin)
+);
+```
+>...
+
+```
+console.log(
+  users.find(user => user.isAdmin).name
+);
+```
+
+> Jezz
+
+more 
 
 
 ## [ Learning Es6: Module ]
