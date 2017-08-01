@@ -1,20 +1,16 @@
 
-var oldArray = [1,2,5];
+var oldArray = [3,1,2,5];
 need to add new 6 
 and reorder it for min to max
 
 **let' start**
 
 ```
-var oldArray = [1,2,5];
-oldArray.push(6); //(4) [1, 2, 5, 6]
+var oldArray = [4, 5, 1, 3]; //(4) [4, 5, 1, 3]
+console.log(oldArray);
+oldArray.push(7);
 var newArray = oldArray;
-
-for (var i = 0; i <= 6 ; i++) {
-  if (i <= newArray[i]) {
-    console.log(newArray[i]);
-  }
-}
+console.log(newArray.sort()); //(5) [1, 3, 4, 5, 7]
 
 ```
 
