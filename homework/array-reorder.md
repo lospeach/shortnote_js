@@ -17,4 +17,5 @@ console.log(newArray.sort()); //(5) [1, 3, 4, 5, 7]
 what about reorder it for max to min
 
 ```
+console.log(newArray.sort().reverse());
 ```
