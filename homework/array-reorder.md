@@ -51,5 +51,56 @@ var filtered = item2.filter(isBigEnough);
 console.log(filtered); //(3) [12, 5, 8]
 ```
 
-Filtering invalid entries from JSON
+## HW3
+add a number in array
 
+```
+let numbers = [100, 5, 23, 44, 72, 11];
+
+function doSum(iAdd) {
+  let result = 0;
+
+  for (var i = 0; i < iAdd.length ; i++) {
+    result += iAdd[i];
+  }
+  return result;
+}
+
+console.log(doSum(numbers)); // 255
+```
+
+**what if we don't know how many number are there in array or there is no list of array**
+
+#### use rest parameter
+
+```
+function doSum2(...iAdd) {
+  let result = 0;
+
+  for (var i = 0; i < iAdd.length ; i++) {
+    result += iAdd[i];
+  }
+  return result;
+}
+
+console.log(doSum2(100, 5, 23, 44, 72, 11)); // 255
+```
+
+## HW4
+object thing...
+
+```
+let name = 'ann';
+let age = 27;
+
+let abj = {
+  name, age,
+  //method
+  greet() {
+    console.log(`
+      ${this.name} , ${this.age}
+    `);
+  }
+};
+abj.greet();
+```
