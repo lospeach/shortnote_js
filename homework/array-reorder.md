@@ -111,3 +111,23 @@ let abj = {
 };
 abj.greet();
 ```
+
+
+## HW5
+
+```
+var arr1 = "john".split('');
+console.log(arr1);
+var arr2 = arr1.reverse();
+console.log(arr2);
+var arr3 = "jones".split('');
+console.log(arr3);
+
+arr2.push(arr3);
+
+console.log();
+console.log(`
+  array 1: length =  ${arr2.length}  last =  ${arr2.slice(-1)} // array 1: length =  5  last =  j,o,n,e,s
+`);
+
+```
