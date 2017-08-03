@@ -72,6 +72,13 @@ console.log(doSum(numbers)); // 255
 **what if we don't know how many number are there in array or there is no list of array**
 
 #### use rest parameter
+**note** rest and spread parameter is not the same thing 
+
+let numbers = [100, 5, 23, 44, 72, 11];
+```
+console.log(...numbers); //100 5 23 44 72 11
+```
+but rest in being use in function, see below
 
 ```
 function doSum2(...iAdd) {
